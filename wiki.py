@@ -24,13 +24,13 @@ def get_list():
 #get random value from list
 
 def wiki_get_sport():
-    return data.wiki[app]["Sport"]
+    return data.wiki[app.get_random()]["Sport"]
 
 def wiki_sub_article():
-    return data.wiki[get_random()]["Subsection"]
+    return data.wiki[app.get_random()]["Subsection"]
 
 def wiki_text():
-    return data.wiki[get_random()]["Text"]
+    return data.wiki[app.get_randomget_random()]["Text"]
 
-def wiki_len(text):
-    return len(text)
+def wiki_len():
+    return len(data.wiki[app.get_random()]["Text"])

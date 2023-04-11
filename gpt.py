@@ -1,9 +1,12 @@
 import openai
 import random 
 import os
-import data 
-list1 = []
+import data
+import app
+
+
 def get_articles():
+    list1 = []
     api_prompt = """For an article about "ARTICLE", make a section titled "HEADER" that is about COUNT characters long. The section is a part of a larger article about "ARTICLE".  Send only the section and omit the section's header and try to keep it in one paragraph. Write it in the style of an encyclopedia."""
     openai.api_key = os.environ["api_key"]
     for article in data.wiki:
@@ -22,13 +25,13 @@ def get_articles():
         list1.append(dic)
 
 def gpt_sport():
-    return data.gpt[get_random()]["Sport"]
+    return data.gpt[app.get_random()]["Sport"]
 
 def gpt_sub_article():
-    return data.gpt[get_random()]["Subsection"]
+    return data.gpt[app.get_random()]["Subsection"]
 
 def gpt_text():
-    return data.gpt[get_random()]["Text"]
+    return data.gpt[app.get_random()]["Text"]
 
-def gpt_len()
-    return len(data.gpt[num]["Text"])
+def gpt_len():
+    return len(data.gpt[app.get_random()]["Text"])
