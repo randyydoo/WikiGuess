@@ -18,7 +18,7 @@ def get_articles():
 
         res = openai.Completion.create(engine = "text-davinci-001", prompt = api_prompt, max_tokens = 1024)
         text = res.choices[0].text
-        text = text.replace("\n", "")
+        text = text.replace("\n", " ")
         dic["Sport"] = article["Sport"]
         dic["Subsection"] = article["Subsection"]
         dic["Text"] = text

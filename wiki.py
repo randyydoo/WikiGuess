@@ -17,6 +17,8 @@ def get_list():
             if subsection.title in ["See also", "References", "Further Reading", "External links" ]:
                 continue
             if len(subsection.text) >= 35:
+                text = subsection.text
+                text.replace("\n", "")
                 dic["Subsection"] = subsection.title
                 dic["Text"] = subsection.text
                 valid.append(dic)
