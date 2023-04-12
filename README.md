@@ -1,2 +1,2 @@
 # WikiGuess
-<img src="./images/mkdn.png">
+<img src="./images/md.png">
