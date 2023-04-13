@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+        body {
+            background-color: rgba(68,70,84);
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+      }
+      
+        button {
+            background-color: rgb(0, 166, 126);
+            border-radius: 8px;
+            border-style: none;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            height: 40px;
+            line-height: 20px;
+            list-style: none;
+            margin: 0;
+            outline: none;
+            padding: 10px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: color 100ms;
+            vertical-align: baseline;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-1:hover,
+        .button-1:focus {
+        background-color: #F082AC;
+        } 
+        div::-webkit-scrollbar {
+            width: 8px;
+            background-color: rgba(68,70,84);
+        }     
+
+        div::-webkit-scrollbar-thumb {
+
+          background-color: rgba(60,50,74);
+        }
+        .left{
+            position: absolute;
+            left: 75px; 
+        }
+        .right{
+            position: absolute;
+            left: 950px;
+        }
+        img{
+            height: 150px;
+            width: 300px;
+        }
+</style>
+
+
+    </style>
+  </head>
+  <body>
+    <img src="{{ url_for('static', filename='wiki.png') }}" alt="Default image"/>
+    <p style="font-size: 30px; color: rgb(0, 166, 126)">The goal of the game is to choose the text writting by chatGPT!</p>
+    <form method = "POST" action="/start">
+        <button style="display:block; margin:0 auto;" type="submit">Start Game</button>
+        <br>
+    </form>
+    <section class = "borders">
+        <div class = "left" style="width:350px;height:390px;border:1px solid rgb(0, 166, 126); overflow: auto; word-break: break-word;"></div>
+        <div class = "right" style="width:350px;height:390px;border:1px solid rgb(0, 166, 126); overflow: auto"></div>
+    </section>
+  </body>
+</html>

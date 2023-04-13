@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+        body {
+            background-color: rgba(68,70,84);
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+      }
+      
+        div::-webkit-scrollbar {
+            width: 8px;
+            background-color: rgba(68,70,84);
+        }     
+
+        div::-webkit-scrollbar-thumb {
+
+          background-color: rgba(60,50,74);
+        }
+        .left{
+            position: absolute;
+            left: 75px; 
+        }
+        .right{
+            position: absolute;
+            left: 950px;
+        }
+        img{
+            height: 150px;
+            width: 300px;
+        }
+</style>
+
+
+    </style>
+  </head>
+  <body>
+    <img src="{{ url_for('static', filename='wiki.png') }}" alt="Default image"/>
+    <p style="font-size: 30px; color: rgb(0, 166, 126)">The goal of the game is to choose the text writting by chatGPT!</p>
+    <section class = "borders">
+        <div class = "left" style="width:350px;height:390px;border:1px solid rgb(0, 166, 126); font-size:18px; overflow: auto; word-break: break-word;"><strong style = "font-size:21px;">{{gpt_sport}}</strong><br>{{gpt_article}}</div>
+        <div class = "right" style="width:350px;height:390px;border:1px solid rgb(0, 166, 126); font-size:18px; overflow: auto; word-break: break-word;"><strong style = "font-size:21px;">{{wiki_sport}}</strong><br>{{wiki_article}}</div>
+    </section>
+  </body>
+</html>
