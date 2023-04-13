@@ -3,13 +3,11 @@ import random
 import data
 import wiki
 import gpt
+import time
 
 app = Flask(__name__) 
 output = []
 highScore = 0
-def get_random():
-    return random.randint(0, len(data.wiki) - 1)
-
 
 #use index.html as loading page and give out directions with a coutndown
 #create route for homepage
@@ -20,9 +18,9 @@ def index():
 @app.route('/start', methods= ['POST', 'GET'])
 def start():
     if request.method == 'POST':
-        num = get_random()
-        while num in output:
-            num = get_random()
+        num = random.randint(0, len(data.wiki) - 1)
+        while num in output or "ISBN" in data.wiki[num]["Text"]:
+            num = random.randint(0, len(data.wiki) - 1)
 
         output.append(num)
         
@@ -30,9 +28,9 @@ def start():
         wiki_article = data.wiki[num]["Text"]
 
         gpt_sport = data.gpt[num]["Sport"]
-        gpt_aritcle = data.gpt[num["Text"]]
-        return render_template('base.html' , wiki_sport = wiki_sport, wiki_article = wiki_article, gpt_sport = gpt_sport, gpt_aritcle= gpt_aritcle)
-        
+        gpt_article = data.gpt[num]["Text"]
+        return render_template('base.html' , wiki_sport = wiki_sport, wiki_article = wiki_article, gpt_sport = gpt_sport, gpt_article = gpt_article)
+
 #use game.html to load game with screen
 #if correct guess render 'win.html' , update Title, Subsection, Text, rest for 1.5 sec, return render_template  'base.html'
 #else render 'lose.html', rest for 1.5 sec, return render_template 'base.html'
