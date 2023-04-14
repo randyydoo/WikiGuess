@@ -29,7 +29,7 @@ def start():
 
         gpt_sport = data.gpt[num]["Sport"]
         gpt_article = data.gpt[num]["Text"]
-        return render_template('base.html' , wiki_sport = wiki_sport, wiki_article = wiki_article, gpt_sport = gpt_sport, gpt_article = gpt_article)
+        return render_template('base.html' , wiki_sport = wiki_sport, wiki_article = wiki_article, gpt_sport = gpt_sport, gpt_article = gpt)
 
 #use game.html to load game with screen
 #if correct guess render 'win.html' , update Title, Subsection, Text, rest for 1.5 sec, return render_template  'base.html'

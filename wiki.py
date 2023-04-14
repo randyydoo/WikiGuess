@@ -39,5 +39,3 @@ def wiki_text():
 
 def wiki_len():
     return len(data.wiki[app.get_random()]["Text"])
-
-print(get_list())
