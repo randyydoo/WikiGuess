@@ -5,23 +5,26 @@ import data
 import app
 
 articles = ["Basketball", "Soccer", "Football" , "Tennis", "Baseball", "Golf"]
+
 #insert all subaritlces into valid
 def get_list():
     valid = []
     for section in articles:
         dic = {}
-        dic["Sport"] = section
         wiki = wikipediaapi.Wikipedia('en')
         page = wiki.page(section)
         for subsection in page.sections:
-            if subsection.title in ["See also", "References", "Further Reading", "External links" ]:
+            if subsection.title in ["See also", "References", "Further reading", "External links"]:
                 continue
             if len(subsection.text) >= 35:
                 text = subsection.text
-                text.replace("\n", "")
+                text.replace("\n", " ")
+                
+                dic["Sport"] = section
                 dic["Subsection"] = subsection.title
-                dic["Text"] = subsection.text
+                dic["Text"] = text
                 valid.append(dic)
+                dic = {}
     return valid
 #get random value from list
 
@@ -36,3 +39,5 @@ def wiki_text():
 
 def wiki_len():
     return len(data.wiki[app.get_random()]["Text"])
+
+print(get_list())
