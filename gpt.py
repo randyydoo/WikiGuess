@@ -8,7 +8,7 @@ import app
 def get_articles():
     list1 = []
     gpt_dic = {}
-    openai.api_key = "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"
+    openai.api_key = os.envriom.get(api_key)
     for article in data.wiki:
         #change prompt
         api_prompt = """For an article about "ARTICLE", make a subsection about "HEADER" that is about COUNT characters long. Write it in a style similar to a section in on Wikipedia."""
