@@ -41,24 +41,50 @@
         .button-1:focus {
         background-color: #F082AC;
         } 
-        div::-webkit-scrollbar {
-            width: 8px;
-            background-color: rgba(68,70,84);
-        }     
+        .left::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
 
-        div::-webkit-scrollbar-thumb {
+          div::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+          }
 
-          background-color: rgba(60,50,74);
-        }
+          div::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 5px;
+          }
+
+          div::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+          }
         .left{
             position: absolute;
             left: 75px; 
             top: 260px;
+            border-radius: 35px;
+            border-width: 0.75vh;
+            overflow-y: auto;
+        }
+        .left:hover {
+            background-color: rgba(85, 87, 105);
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            text-shadow: 2px 2px 4px #0e0e0e;
         }
         .right{
             position: absolute;
             left: 950px;
             top:260px;
+            border-radius: 35px;
+            border-width: 0.75vh;
+            overflow-y: auto;
+        }
+        .right:hover{
+            background-color: rgba(102, 104, 124);
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            text-shadow: 2px 2px 4px #0e0e0e;
         }
         img{
             height: 150px;
@@ -78,8 +104,8 @@
         <br>
     </form>
     <section class = "borders">
-        <div class = "left" style="width:350px;height:390px;border:1px solid rgb(0, 166, 126); overflow: auto; word-break: break-word;"></div>
-        <div class = "right" style="width:350px;height:390px;border:1px solid rgb(0, 166, 126); overflow: auto"></div>
+        <div class = "left" style="width:350px;height:390px;border:1px solid #33353e; overflow: auto; word-break: break-word;"></div>
+        <div class = "right" style="width:350px;height:390px;border:1px solid #33353e ; overflow: auto"></div>
     </section>
   </body>
 </html>

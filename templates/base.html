@@ -10,24 +10,49 @@
             max-width: 800px;
       }
       
-        div::-webkit-scrollbar {
-            width: 8px;
-            background-color: rgba(68,70,84);
-        }     
+        div::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
 
         div::-webkit-scrollbar-thumb {
+          background-color: #888;
+          border-radius: 5px;
+        }
 
-          background-color: rgba(60,50,74);
+        div::-webkit-scrollbar-thumb:hover {
+          background-color: #555;
         }
         .left{
             position: absolute;
             left: 75px; 
             top: 260px;
+            border-radius: 35px;
+            border-width: 0.75vh;
+            overflow-y: auto;
+            padding-left: 5px;
+            padding-right: 15px;
+        }
+        .left:hover {
+            background-color: rgba(85, 87, 105);
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            text-shadow: 2px 2px 4px #0e0e0e;
         }
         .right{
             position: absolute;
             left: 950px;
             top: 260px;
+            border-radius: 35px;
+            border-width: 0.75vh;
+            overflow-y: auto;
+            padding-left: 5px;
+            padding-right: 15px;
+        }
+        .right:hover{
+            background-color: rgba(85, 87, 105);
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            text-shadow: 2px 2px 4px #0e0e0e;
         }
         img{
             height: 150px;
@@ -36,7 +61,6 @@
         }
 </style>
 
-
     </style>
   </head>
   <body>
@@ -44,8 +68,8 @@
     <p style="font-size: 30px; color: rgb(159, 160, 162)">The goal of the game is to choose the text writting by chatGPT!</p>
     <section class = "borders">
         <div class = "score" style= "font-size: 50px; color: rgb(159, 160, 162);"><strong>Score: {{score}} </strong></div>
-        <div class = "left" style= "color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid rgb(0, 166, 126); font-size:18px; overflow: auto; word-break: break-word;"><strong style = "font-size:21px;">{{gpt_sport}}</strong><br>{{gpt_article}}</div>
-        <div class = "right" style="color: rgb(159, 160, 162);width:350px;height:390px;border:1px solid rgb(0, 166, 126); font-size:18px; overflow: auto; word-break: break-word;"><strong style = "font-size:21px;">{{wiki_sport}}</strong><br>{{wiki_article}}</div>
+        <div class = "left" style= "color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;"><strong style = "font-size:21px;">{{gpt_sport}}</strong><br>{{gpt_article}}</div>
+        <div class = "right" style="color: rgb(159, 160, 162);width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;"><strong style = "font-size:21px;">{{wiki_sport}}</strong><br>{{wiki_article}}</div>
     </section>
   </body>
 </html>
