@@ -31,7 +31,6 @@ document.getElementById('right_button').addEventListener('click', function() {
 
 // Function to set text for left and right buttons
 function newText(data) {
-  fetc
   var wiki_text = data['Wiki'];
   var gpt_text = data['Gpt'];
   var random = data['Num'];
