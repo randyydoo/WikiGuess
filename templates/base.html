@@ -68,14 +68,13 @@
   <body>
     <img src="{{ url_for('static', filename='wiki.png') }}" alt="Default image"/>
     <p style="font-size: 30px; color: rgb(159, 160, 162)">The goal of the game is to choose the text writting by chatGPT!</p>
-    <div class = "score" style= "font-size: 50px; color: rgb(159, 160, 162);"><strong>Score: {{score}} </strong></div>
+    <div class = "score" style= "font-size: 50px; color: rgb(159, 160, 162);"><strong id = "score">Score</strong></div>
    
-    <button class = "left" style= " background-color:rgba(68,70,84); color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;" type = "button" value = "gpt">
-        <strong style = "font-size:21px;">{{gpt_sport}}</strong><br>{{gpt_article}}
+    <button id = "left_button" class = "left" style= " background-color:rgba(68,70,84); color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;" type = "button" >random text
    </button>
    
-    <button class = "right" style= "background-color : rgba(68,70,84); color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;" type = "button" value = "wiki">
-      <strong style = "font-size:21px;">{{wiki_sport}}</strong><br>{{wiki_article}}
+    <button id = "right_button" class = "right" style= "background-color : rgba(68,70,84); color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;" type = "button" >
+      random text
     </button>
   </body>
 </html> 
