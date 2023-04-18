@@ -33,29 +33,35 @@ document.getElementById('right_button').addEventListener('click', function() {
 function newText(data) {
   var wiki_text = data['Wiki'];
   var gpt_text = data['Gpt'];
-  var random = data['Num'];
   var sport = data['Sport'];
-  document.getElementById('left_button').style.display = "block";
-  document.getElementById('right_button').style.display = "block";
+  var random = data["Random"]
+  
+  let left = document.getElementById('left_button');
+  let right = document.getElementById('right_button');
+  let left_sport = document.getElementById('left_sport');
+  let right_sport = document.getElementById('right_sport');
+  let score = document.getElementById('score');
 
-  // Use the retrieved variable in your HTML
-  document.getElementById('score').innerHTML = 'Score: ' + score;
+  left.style.display = "block";
+  right.style.display = "block";
+  score.innerHTML = 'Score: ' + score;
+  
   if (random == 1) {
-    document.getElementById('left_button').innerHTML = wiki_text;
-    document.getElementById('left_button').value = 'wiki';
-    document.getElementById('left_sport').innerHTML = sport;
+    left.innerHTML = wiki_text;
+    left.value = 'wiki';
+    left_sport.innerHTML = sport;
 
-    document.getElementById('right_button').innerHTML = gpt_text;
-    document.getElementById('right_button').value = 'gpt';
-    document.getElementById('right_sport').innerHTML = sport;
+    right.innerHTML = gpt_text;
+    right.value = 'gpt';
+    right.innerHTML = sport;
   } else {
-    document.getElementById('right_button').innerHTML = wiki_text;
-    document.getElementById('right_button').value = 'wiki';
-    document.getElementById('right_sport').innerHTML = sport;
+    right.innerHTML = wiki_text;
+    right.value = 'wiki';
+    right_sport.innerHTML = sport;
 
-    document.getElementById('left_button').innerHTML = gpt_text;
-    document.getElementById('left_button').value = 'gpt';
-    document.getElementById('left_sport').innerHTML = sport;
+    left.innerHTML = gpt_text;
+    left.value = 'gpt';
+    left.innerHTML = sport;
   }
 }
 
