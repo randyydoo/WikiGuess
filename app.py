@@ -11,11 +11,9 @@ def wiki_text():
     num = random.randint(0, len(data.wiki) - 1)
     while num in output:
         num = random.randint(0, len(data.wiki) - 1)
-    json_obj["Sport"] = data.wiki[num]["Sport"]
     json_obj["Wiki"] = data.wiki[num]["Text"]
     json_obj["Gpt"] = data.gpt[num]["Text"]
-    json_obj["Num"] = num
-    print(json_obj)
+    json_obj["Random"] = random.randint(0,1)
     return jsonify(json_obj)
 
 #create route for homepage
