@@ -34,19 +34,26 @@
         -webkit-user-select: none;
         touch-action: manipulation;
     }
-    button::-webkit-scrollbar-track {
-background-color: #3f3d3d;
-}
+    .left::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+  }
 
-    button::-webkit-scrollbar-thumb {
-      background-color: rgb(193, 26, 26);
-      border-radius: 5px;
-    }
+    .left::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+      }
 
-    button::-webkit-scrollbar-thumb:hover {
-      background-color: #555;
+    .left::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
     }
     .left{
+        background-color:rgba(68,70,84);
+        color: rgb(159, 160, 162);
+        width:350px;
+        height:390px;
+        border: 1px solid rgba(51, 53, 62, 0.5);
+        font-size:18px; overflow: auto;
+        word-break: break-word;
         display: block;
         position: absolute;
         left: 75px; 
@@ -58,12 +65,20 @@ background-color: #3f3d3d;
         padding-right: 15px;
     }
     .left:hover {
-        background-color: rgba(85, 87, 105);
+        background-color: rgb(85, 87, 105);
         cursor: pointer;
         transition: 0.2s ease-in-out;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 2.5);
     }
     .right{
+        background-color : rgba(68,70,84);
+        color: rgb(159, 160, 162);
+        width:350px;
+        height:390px;
+        border:1px solid rgba(51, 53, 62, 0.5);
+        font-size:18px;
+        overflow: auto;
+        word-break: break-word;
         display: block;
         position: absolute;
         right: 75px;
@@ -89,7 +104,7 @@ background-color: #3f3d3d;
   <body>
     <img src="{{ url_for('static', filename='wiki.png') }}" alt="Default image"/>
     <p style="font-size: 30px; color: rgb(159, 160, 162)">The goal of the game is to choose the text writting by chatGPT!</p>
-    <div id = "score" style= "font-size: 50px; color: rgb(159, 160, 162);"></div>
+    <strong><div id = "score" style= "font-size: 50px; color: rgb(159, 160, 162);"></div></strong>
     <button  onclick ="removeButton()" class = "start1" id ="start" style="display:block; margin:0 auto;">Start Game</button>
     <script>
       function removeButton() {
@@ -98,10 +113,13 @@ background-color: #3f3d3d;
         button.parentNode.removeChild(button);
       }
       </script>
-    <button value = "" id = "left_button" class = "left" style= "display: block; background-color:rgba(68,70,84); color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;" type = "button" >
+    
+    <button value = "" id = "left_button" class = "left" type = "button" >
    </button>
-    <button value = "" id = "right_button" class = "right" style= "display: block; background-color : rgba(68,70,84); color: rgb(159, 160, 162); width:350px;height:390px;border:1px solid #33353e; font-size:18px; overflow: auto; word-break: break-word;" type = "button" >
-    </button>
+   
+   
+    <button value = "" id = "right_button" class = "right"  type = "button" ></button>
+  
     <script src="../static/main.js"></script>
   </body>
 </html> 
