@@ -21,36 +21,32 @@ function start() {
 
 // Function to set text for left and right buttons
 function newText(data) {
-  var random = getRandomInt(0,2);
-  var wiki_text = data['Wiki'];
-  var gpt_text = data['Gpt'];
-  var sport = data['Sport'];
+  var num = g_json["Random"];
+  var wiki_text = g_json['Wiki'];
+  var gpt_text = g_json['Gpt'];
   
   let left = document.getElementById('left_button');
   let right = document.getElementById('right_button');
-  let left_sport = document.getElementById('left_sport');
-  let right_sport = document.getElementById('right_sport');
+
+  document.getElementById('score').innerHTML = "Score: " + score
 
   left.style.display = "block";
   right.style.display = "block";
   
-  if (random == 1) {
+  if (num == 1) {
     left.innerHTML = wiki_text;
     left.value = 'wiki';
-    left_sport.innerHTML = sport;
+    
 
     right.innerHTML = gpt_text;
     right.value = 'gpt';
-    right_sport.innerHTML = sport;
   } 
   else {
     right.innerHTML = wiki_text;
     right.value = 'wiki';
-    right_sport.innerHTML = sport;
   
     left.innerHTML = gpt_text;
     left.value = 'gpt';
-    left_sport.innerHTML = sport;
   }
 }
 
@@ -64,9 +60,8 @@ document.getElementById("start").addEventListener("click", function() {
 });
 });
 
-document.getElementById('left_button').addEventListener('click', function() {
-  var value = document.getElementById('left_button').value;
-  if (value === 'gpt') {
+document.getElementById('left_button').addEventListener('click', function(event) {
+  if (event.target.value == "gpt") {
     score++;
     start().then(data => {
       g_json = data;
@@ -76,6 +71,7 @@ document.getElementById('left_button').addEventListener('click', function() {
   });
   } else {
     score = 0;
+    alert("Incorrect");
     start().then(data => {
       g_json = data;
       newText(data);
@@ -83,12 +79,10 @@ document.getElementById('left_button').addEventListener('click', function() {
     console.error(error);
   });
   }
-  document.getElementById('score').innerHTML = 'Score: ' + score;
 });
 
-document.getElementById('right_button').addEventListener('click', function() {
-  var value = document.getElementById('right_button').value;
-  if (value === 'gpt') {
+document.getElementById('right_button').addEventListener('click', function(event) {
+  if (event.target.value == "gpt") {
     score++;
     start().then(data => {
       g_json =data;
@@ -97,6 +91,7 @@ document.getElementById('right_button').addEventListener('click', function() {
     console.error(error);
   });
   } else {
+    alert("Incorrect")
     score = 0;
     start().then(data => {
       g_json = data;
@@ -105,7 +100,6 @@ document.getElementById('right_button').addEventListener('click', function() {
     console.error(error);
   });
   }
-  document.getElementById('score').innerHTML = 'Score: ' + score;
 });
 
 
