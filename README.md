@@ -17,7 +17,7 @@ $ source env/bin/activate
 
 4. Install `requirements`:
 ```
-$ (env) pip3 install -r requirements.txt
+$ (env) pip3 install -r requirments.txt
 ```
 
 5. Run program to get `server`:
