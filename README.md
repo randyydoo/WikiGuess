@@ -1,3 +1,6 @@
+## Choose Text Written by AI
+![example][/gif/example.gif]
+
 
 ## How To Run (Must Follow Steps in Order)
 1. Install `virtualenv`:
