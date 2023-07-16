@@ -1,6 +1,5 @@
 ## Choose Text Written by AI
-![example][/gif/example.gif]
-
+![example][https://github.com/randyydoo/WikiGuess/blob/main/gif/example.gif]
 
 ## How To Run (Must Follow Steps in Order)
 1. Install `virtualenv`:
