@@ -1,4 +1,4 @@
-# Best AI/ML project at CSUF's Annual Hackathon
+
 ## How To Run (Must Follow Steps in Order)
 1. Install `virtualenv`:
 ```
