@@ -1,7 +1,7 @@
 ## Choose Sports-Related Text Written by AI
 ![example](https://github.com/randyydoo/WikiGuess/blob/main/gif/example.gif?raw=true)
 
-### How To Run (Must Follow Steps in Order)
+### How To Run 
 1. Install `virtualenv`:
 ```
 $ pip3 install virtualenv
