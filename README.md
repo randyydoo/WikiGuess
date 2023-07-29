@@ -4,7 +4,7 @@
 ### How To Run 
 1. Install `requirements`:
 ```
-$ (env) pip3 install -r requirments.txt
+$ pip3 install -r requirments.txt
 ```
 
 2. Run program to get `server`:
