@@ -2,10 +2,10 @@ from flask import Flask, jsonify, render_template
 import random
 import data
 
-app = Flask(__name__) 
+application = Flask(__name__) 
 output = []
 
-@app.route('/get_text')
+@application.route('/get_text')
 def wiki_text():
     json_obj = {}
     num = random.randint(0, len(data.wiki) - 1)
@@ -17,9 +17,9 @@ def wiki_text():
     return jsonify(json_obj)
 
 #create route for homepage
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
